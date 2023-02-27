@@ -63,6 +63,22 @@ class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    ExchangesListRoute.name: (routeData) {
+      return CupertinoPageX<dynamic>(
+        routeData: routeData,
+        child: const ExchangesListScreen(),
+      );
+    },
+    ExchangeDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<ExchangeDetailsRouteArgs>();
+      return CupertinoPageX<dynamic>(
+        routeData: routeData,
+        child: ExchangeDetailsScreen(
+          key: args.key,
+          exchange: args.exchange,
+        ),
+      );
+    },
   };
 
   @override
@@ -105,6 +121,18 @@ class _$AppRouter extends RootStackRouter {
               ExchangesRoute.name,
               path: 'exchanges',
               parent: HomeRoute.name,
+              children: [
+                RouteConfig(
+                  ExchangesListRoute.name,
+                  path: '',
+                  parent: ExchangesRoute.name,
+                ),
+                RouteConfig(
+                  ExchangeDetailsRoute.name,
+                  path: 'details',
+                  parent: ExchangesRoute.name,
+                ),
+              ],
             ),
             RouteConfig(
               FavouriteRoute.name,
@@ -150,10 +178,11 @@ class AssetsRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [ExchangesScreen]
 class ExchangesRoute extends PageRouteInfo<void> {
-  const ExchangesRoute()
+  const ExchangesRoute({List<PageRouteInfo>? children})
       : super(
           ExchangesRoute.name,
           path: 'exchanges',
+          initialChildren: children,
         );
 
   static const String name = 'ExchangesRoute';
@@ -226,5 +255,51 @@ class AssetDetailsRouteArgs {
   @override
   String toString() {
     return 'AssetDetailsRouteArgs{key: $key, asset: $asset}';
+  }
+}
+
+/// generated route for
+/// [ExchangesListScreen]
+class ExchangesListRoute extends PageRouteInfo<void> {
+  const ExchangesListRoute()
+      : super(
+          ExchangesListRoute.name,
+          path: '',
+        );
+
+  static const String name = 'ExchangesListRoute';
+}
+
+/// generated route for
+/// [ExchangeDetailsScreen]
+class ExchangeDetailsRoute extends PageRouteInfo<ExchangeDetailsRouteArgs> {
+  ExchangeDetailsRoute({
+    Key? key,
+    required Exchange exchange,
+  }) : super(
+          ExchangeDetailsRoute.name,
+          path: 'details',
+          args: ExchangeDetailsRouteArgs(
+            key: key,
+            exchange: exchange,
+          ),
+        );
+
+  static const String name = 'ExchangeDetailsRoute';
+}
+
+class ExchangeDetailsRouteArgs {
+  const ExchangeDetailsRouteArgs({
+    this.key,
+    required this.exchange,
+  });
+
+  final Key? key;
+
+  final Exchange exchange;
+
+  @override
+  String toString() {
+    return 'ExchangeDetailsRouteArgs{key: $key, exchange: $exchange}';
   }
 }

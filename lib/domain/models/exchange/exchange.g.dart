@@ -7,20 +7,21 @@ part of 'exchange.dart';
 // **************************************************************************
 
 _$_Exchange _$$_ExchangeFromJson(Map<String, dynamic> json) => _$_Exchange(
-      id: json['id'] as String,
+      exchangeId: json['exchangeId'] as String,
       name: json['name'] as String,
       rank: stringToInt(json['rank'] as String),
-      percentTotalVolume: stringToDouble(json['percentTotalVolume'] as String),
-      volumeUsd: stringToDouble(json['volumeUsd'] as String),
+      percentTotalVolume:
+          stringToNullableDouble(json['percentTotalVolume'] as String?),
+      volumeUsd: stringToNullableDouble(json['volumeUsd'] as String?),
       tradingPairs: stringToInt(json['tradingPairs'] as String),
-      socket: json['socket'] as bool,
+      socket: json['socket'] as bool?,
       exchangeUrl: json['exchangeUrl'] as String,
-      updated: json['updated'] as String,
+      updated: json['updated'] as int,
     );
 
 Map<String, dynamic> _$$_ExchangeToJson(_$_Exchange instance) =>
     <String, dynamic>{
-      'id': instance.id,
+      'exchangeId': instance.exchangeId,
       'name': instance.name,
       'rank': instance.rank,
       'percentTotalVolume': instance.percentTotalVolume,

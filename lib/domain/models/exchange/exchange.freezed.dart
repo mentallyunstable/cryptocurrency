@@ -20,19 +20,19 @@ Exchange _$ExchangeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Exchange {
-  String get id => throw _privateConstructorUsedError;
+  String get exchangeId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   @JsonKey(fromJson: stringToInt)
   int get rank => throw _privateConstructorUsedError;
-  @JsonKey(fromJson: stringToDouble)
-  double get percentTotalVolume => throw _privateConstructorUsedError;
-  @JsonKey(fromJson: stringToDouble)
-  double get volumeUsd => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: stringToNullableDouble)
+  double? get percentTotalVolume => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: stringToNullableDouble)
+  double? get volumeUsd => throw _privateConstructorUsedError;
   @JsonKey(fromJson: stringToInt)
   int get tradingPairs => throw _privateConstructorUsedError;
-  bool get socket => throw _privateConstructorUsedError;
+  bool? get socket => throw _privateConstructorUsedError;
   String get exchangeUrl => throw _privateConstructorUsedError;
-  String get updated => throw _privateConstructorUsedError;
+  int get updated => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,15 +46,15 @@ abstract class $ExchangeCopyWith<$Res> {
       _$ExchangeCopyWithImpl<$Res, Exchange>;
   @useResult
   $Res call(
-      {String id,
+      {String exchangeId,
       String name,
       @JsonKey(fromJson: stringToInt) int rank,
-      @JsonKey(fromJson: stringToDouble) double percentTotalVolume,
-      @JsonKey(fromJson: stringToDouble) double volumeUsd,
+      @JsonKey(fromJson: stringToNullableDouble) double? percentTotalVolume,
+      @JsonKey(fromJson: stringToNullableDouble) double? volumeUsd,
       @JsonKey(fromJson: stringToInt) int tradingPairs,
-      bool socket,
+      bool? socket,
       String exchangeUrl,
-      String updated});
+      int updated});
 }
 
 /// @nodoc
@@ -70,20 +70,20 @@ class _$ExchangeCopyWithImpl<$Res, $Val extends Exchange>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? exchangeId = null,
     Object? name = null,
     Object? rank = null,
-    Object? percentTotalVolume = null,
-    Object? volumeUsd = null,
+    Object? percentTotalVolume = freezed,
+    Object? volumeUsd = freezed,
     Object? tradingPairs = null,
-    Object? socket = null,
+    Object? socket = freezed,
     Object? exchangeUrl = null,
     Object? updated = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      exchangeId: null == exchangeId
+          ? _value.exchangeId
+          : exchangeId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -93,22 +93,22 @@ class _$ExchangeCopyWithImpl<$Res, $Val extends Exchange>
           ? _value.rank
           : rank // ignore: cast_nullable_to_non_nullable
               as int,
-      percentTotalVolume: null == percentTotalVolume
+      percentTotalVolume: freezed == percentTotalVolume
           ? _value.percentTotalVolume
           : percentTotalVolume // ignore: cast_nullable_to_non_nullable
-              as double,
-      volumeUsd: null == volumeUsd
+              as double?,
+      volumeUsd: freezed == volumeUsd
           ? _value.volumeUsd
           : volumeUsd // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       tradingPairs: null == tradingPairs
           ? _value.tradingPairs
           : tradingPairs // ignore: cast_nullable_to_non_nullable
               as int,
-      socket: null == socket
+      socket: freezed == socket
           ? _value.socket
           : socket // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       exchangeUrl: null == exchangeUrl
           ? _value.exchangeUrl
           : exchangeUrl // ignore: cast_nullable_to_non_nullable
@@ -116,7 +116,7 @@ class _$ExchangeCopyWithImpl<$Res, $Val extends Exchange>
       updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ) as $Val);
   }
 }
@@ -129,15 +129,15 @@ abstract class _$$_ExchangeCopyWith<$Res> implements $ExchangeCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
+      {String exchangeId,
       String name,
       @JsonKey(fromJson: stringToInt) int rank,
-      @JsonKey(fromJson: stringToDouble) double percentTotalVolume,
-      @JsonKey(fromJson: stringToDouble) double volumeUsd,
+      @JsonKey(fromJson: stringToNullableDouble) double? percentTotalVolume,
+      @JsonKey(fromJson: stringToNullableDouble) double? volumeUsd,
       @JsonKey(fromJson: stringToInt) int tradingPairs,
-      bool socket,
+      bool? socket,
       String exchangeUrl,
-      String updated});
+      int updated});
 }
 
 /// @nodoc
@@ -151,20 +151,20 @@ class __$$_ExchangeCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? exchangeId = null,
     Object? name = null,
     Object? rank = null,
-    Object? percentTotalVolume = null,
-    Object? volumeUsd = null,
+    Object? percentTotalVolume = freezed,
+    Object? volumeUsd = freezed,
     Object? tradingPairs = null,
-    Object? socket = null,
+    Object? socket = freezed,
     Object? exchangeUrl = null,
     Object? updated = null,
   }) {
     return _then(_$_Exchange(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      exchangeId: null == exchangeId
+          ? _value.exchangeId
+          : exchangeId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -174,22 +174,22 @@ class __$$_ExchangeCopyWithImpl<$Res>
           ? _value.rank
           : rank // ignore: cast_nullable_to_non_nullable
               as int,
-      percentTotalVolume: null == percentTotalVolume
+      percentTotalVolume: freezed == percentTotalVolume
           ? _value.percentTotalVolume
           : percentTotalVolume // ignore: cast_nullable_to_non_nullable
-              as double,
-      volumeUsd: null == volumeUsd
+              as double?,
+      volumeUsd: freezed == volumeUsd
           ? _value.volumeUsd
           : volumeUsd // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       tradingPairs: null == tradingPairs
           ? _value.tradingPairs
           : tradingPairs // ignore: cast_nullable_to_non_nullable
               as int,
-      socket: null == socket
+      socket: freezed == socket
           ? _value.socket
           : socket // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       exchangeUrl: null == exchangeUrl
           ? _value.exchangeUrl
           : exchangeUrl // ignore: cast_nullable_to_non_nullable
@@ -197,54 +197,59 @@ class __$$_ExchangeCopyWithImpl<$Res>
       updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Exchange implements _Exchange {
+class _$_Exchange extends _Exchange {
   const _$_Exchange(
-      {required this.id,
+      {required this.exchangeId,
       required this.name,
-      @JsonKey(fromJson: stringToInt) required this.rank,
-      @JsonKey(fromJson: stringToDouble) required this.percentTotalVolume,
-      @JsonKey(fromJson: stringToDouble) required this.volumeUsd,
-      @JsonKey(fromJson: stringToInt) required this.tradingPairs,
+      @JsonKey(fromJson: stringToInt)
+          required this.rank,
+      @JsonKey(fromJson: stringToNullableDouble)
+          required this.percentTotalVolume,
+      @JsonKey(fromJson: stringToNullableDouble)
+          required this.volumeUsd,
+      @JsonKey(fromJson: stringToInt)
+          required this.tradingPairs,
       required this.socket,
       required this.exchangeUrl,
-      required this.updated});
+      required this.updated})
+      : super._();
 
   factory _$_Exchange.fromJson(Map<String, dynamic> json) =>
       _$$_ExchangeFromJson(json);
 
   @override
-  final String id;
+  final String exchangeId;
   @override
   final String name;
   @override
   @JsonKey(fromJson: stringToInt)
   final int rank;
   @override
-  @JsonKey(fromJson: stringToDouble)
-  final double percentTotalVolume;
+  @JsonKey(fromJson: stringToNullableDouble)
+  final double? percentTotalVolume;
   @override
-  @JsonKey(fromJson: stringToDouble)
-  final double volumeUsd;
+  @JsonKey(fromJson: stringToNullableDouble)
+  final double? volumeUsd;
   @override
   @JsonKey(fromJson: stringToInt)
   final int tradingPairs;
   @override
-  final bool socket;
+  final bool? socket;
   @override
   final String exchangeUrl;
   @override
-  final String updated;
+  final int updated;
 
   @override
   String toString() {
-    return 'Exchange(id: $id, name: $name, rank: $rank, percentTotalVolume: $percentTotalVolume, volumeUsd: $volumeUsd, tradingPairs: $tradingPairs, socket: $socket, exchangeUrl: $exchangeUrl, updated: $updated)';
+    return 'Exchange(exchangeId: $exchangeId, name: $name, rank: $rank, percentTotalVolume: $percentTotalVolume, volumeUsd: $volumeUsd, tradingPairs: $tradingPairs, socket: $socket, exchangeUrl: $exchangeUrl, updated: $updated)';
   }
 
   @override
@@ -252,7 +257,8 @@ class _$_Exchange implements _Exchange {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Exchange &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.exchangeId, exchangeId) ||
+                other.exchangeId == exchangeId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.rank, rank) || other.rank == rank) &&
             (identical(other.percentTotalVolume, percentTotalVolume) ||
@@ -271,7 +277,7 @@ class _$_Exchange implements _Exchange {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      id,
+      exchangeId,
       name,
       rank,
       percentTotalVolume,
@@ -295,46 +301,47 @@ class _$_Exchange implements _Exchange {
   }
 }
 
-abstract class _Exchange implements Exchange {
+abstract class _Exchange extends Exchange {
   const factory _Exchange(
-      {required final String id,
+      {required final String exchangeId,
       required final String name,
       @JsonKey(fromJson: stringToInt)
           required final int rank,
-      @JsonKey(fromJson: stringToDouble)
-          required final double percentTotalVolume,
-      @JsonKey(fromJson: stringToDouble)
-          required final double volumeUsd,
+      @JsonKey(fromJson: stringToNullableDouble)
+          required final double? percentTotalVolume,
+      @JsonKey(fromJson: stringToNullableDouble)
+          required final double? volumeUsd,
       @JsonKey(fromJson: stringToInt)
           required final int tradingPairs,
-      required final bool socket,
+      required final bool? socket,
       required final String exchangeUrl,
-      required final String updated}) = _$_Exchange;
+      required final int updated}) = _$_Exchange;
+  const _Exchange._() : super._();
 
   factory _Exchange.fromJson(Map<String, dynamic> json) = _$_Exchange.fromJson;
 
   @override
-  String get id;
+  String get exchangeId;
   @override
   String get name;
   @override
   @JsonKey(fromJson: stringToInt)
   int get rank;
   @override
-  @JsonKey(fromJson: stringToDouble)
-  double get percentTotalVolume;
+  @JsonKey(fromJson: stringToNullableDouble)
+  double? get percentTotalVolume;
   @override
-  @JsonKey(fromJson: stringToDouble)
-  double get volumeUsd;
+  @JsonKey(fromJson: stringToNullableDouble)
+  double? get volumeUsd;
   @override
   @JsonKey(fromJson: stringToInt)
   int get tradingPairs;
   @override
-  bool get socket;
+  bool? get socket;
   @override
   String get exchangeUrl;
   @override
-  String get updated;
+  int get updated;
   @override
   @JsonKey(ignore: true)
   _$$_ExchangeCopyWith<_$_Exchange> get copyWith =>

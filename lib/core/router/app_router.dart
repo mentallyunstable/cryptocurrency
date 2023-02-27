@@ -21,7 +21,14 @@ part 'app_router.gr.dart';
             AutoRoute(page: AssetDetailsScreen, path: 'details'),
           ],
         ),
-        AutoRoute(page: ExchangesScreen, path: 'exchanges'),
+        AutoRoute(
+          page: ExchangesScreen,
+          path: 'exchanges',
+          children: [
+            AutoRoute(page: ExchangesListScreen, path: ''),
+            AutoRoute(page: ExchangeDetailsScreen, path: 'details'),
+          ],
+        ),
         AutoRoute(page: FavouriteScreen, path: 'favourite'),
         AutoRoute(page: ProfileScreen, path: 'profile'),
       ],

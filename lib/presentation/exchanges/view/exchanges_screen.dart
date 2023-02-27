@@ -12,6 +12,13 @@ class ExchangesScreen extends StatefulWidget {
 class _ExchangesScreenState extends State<ExchangesScreen>
     with AutomaticKeepAliveClientMixin {
   @override
+  void initState() {
+    context.read<ExchangesBloc>().add(const ExchangesBlocEvent.load());
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     super.build(context);
 

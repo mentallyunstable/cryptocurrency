@@ -11,7 +11,7 @@ class AssetsBlocState with _$AssetsBlocState {
   const factory AssetsBlocState.loading() = LoadingAssetsBlocState;
 
   const factory AssetsBlocState.loaded({
-    required final List<Asset> assets,
+    required final AssetsData assets,
   }) = LoadedAssetsBlocState;
 
   const factory AssetsBlocState.error({

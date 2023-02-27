@@ -15,7 +15,8 @@ class _FavouriteScreenState extends State<FavouriteScreen>
   Widget build(BuildContext context) {
     super.build(context);
 
-    return const AutoRouter();
+    return const Scaffold();
+    // return const AutoRouter();
   }
 
   @override

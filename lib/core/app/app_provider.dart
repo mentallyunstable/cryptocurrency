@@ -14,6 +14,10 @@ class AppProvider extends StatelessWidget {
         BlocProvider(
           create: (_) => AssetsBloc(repository: container<AssetsRepository>()),
         ),
+        BlocProvider(
+          create: (_) =>
+              ExchangesBloc(repository: container<ExchangesRepository>()),
+        ),
       ],
       child: child,
     );

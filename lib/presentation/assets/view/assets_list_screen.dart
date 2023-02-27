@@ -10,8 +10,8 @@ class AssetsListScreen extends StatelessWidget {
     return Scaffold(
       body: NestedScrollView(
         floatHeaderSlivers: true,
-        headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          const SliverAppBar(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => const [
+          SliverAppBar(
             floating: true,
             centerTitle: true,
             title: Text('Trending coins'),

@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
               activeIcon: Icon(Icons.home_rounded),
             ),
             BottomNavigationBarItem(
-              label: 'Markets',
+              label: 'Exchanges',
               icon: Icon(Icons.insert_chart_outlined),
               activeIcon: Icon(Icons.insert_chart),
             ),

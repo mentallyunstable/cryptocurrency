@@ -15,7 +15,8 @@ class _ProfileScreenState extends State<ProfileScreen>
   Widget build(BuildContext context) {
     super.build(context);
 
-    return const AutoRouter();
+    return const Scaffold();
+    // return const AutoRouter();
   }
 
   @override

@@ -20,7 +20,7 @@ mixin _$AssetsBlocState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Asset> assets) loaded,
+    required TResult Function(AssetsData assets) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$AssetsBlocState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Asset> assets)? loaded,
+    TResult? Function(AssetsData assets)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$AssetsBlocState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Asset> assets)? loaded,
+    TResult Function(AssetsData assets)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$InitialAssetsBlocState implements InitialAssetsBlocState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Asset> assets) loaded,
+    required TResult Function(AssetsData assets) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -137,7 +137,7 @@ class _$InitialAssetsBlocState implements InitialAssetsBlocState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Asset> assets)? loaded,
+    TResult? Function(AssetsData assets)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -148,7 +148,7 @@ class _$InitialAssetsBlocState implements InitialAssetsBlocState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Asset> assets)? loaded,
+    TResult Function(AssetsData assets)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$LoadingAssetsBlocState implements LoadingAssetsBlocState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Asset> assets) loaded,
+    required TResult Function(AssetsData assets) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingAssetsBlocState implements LoadingAssetsBlocState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Asset> assets)? loaded,
+    TResult? Function(AssetsData assets)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingAssetsBlocState implements LoadingAssetsBlocState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Asset> assets)? loaded,
+    TResult Function(AssetsData assets)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -320,7 +320,9 @@ abstract class _$$LoadedAssetsBlocStateCopyWith<$Res> {
           $Res Function(_$LoadedAssetsBlocState) then) =
       __$$LoadedAssetsBlocStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Asset> assets});
+  $Res call({AssetsData assets});
+
+  $AssetsDataCopyWith<$Res> get assets;
 }
 
 /// @nodoc
@@ -338,26 +340,28 @@ class __$$LoadedAssetsBlocStateCopyWithImpl<$Res>
   }) {
     return _then(_$LoadedAssetsBlocState(
       assets: null == assets
-          ? _value._assets
+          ? _value.assets
           : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset>,
+              as AssetsData,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetsDataCopyWith<$Res> get assets {
+    return $AssetsDataCopyWith<$Res>(_value.assets, (value) {
+      return _then(_value.copyWith(assets: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$LoadedAssetsBlocState implements LoadedAssetsBlocState {
-  const _$LoadedAssetsBlocState({required final List<Asset> assets})
-      : _assets = assets;
+  const _$LoadedAssetsBlocState({required this.assets});
 
-  final List<Asset> _assets;
   @override
-  List<Asset> get assets {
-    if (_assets is EqualUnmodifiableListView) return _assets;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_assets);
-  }
+  final AssetsData assets;
 
   @override
   String toString() {
@@ -369,12 +373,11 @@ class _$LoadedAssetsBlocState implements LoadedAssetsBlocState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedAssetsBlocState &&
-            const DeepCollectionEquality().equals(other._assets, _assets));
+            (identical(other.assets, assets) || other.assets == assets));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_assets));
+  int get hashCode => Object.hash(runtimeType, assets);
 
   @JsonKey(ignore: true)
   @override
@@ -388,7 +391,7 @@ class _$LoadedAssetsBlocState implements LoadedAssetsBlocState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Asset> assets) loaded,
+    required TResult Function(AssetsData assets) loaded,
     required TResult Function(String message) error,
   }) {
     return loaded(assets);
@@ -399,7 +402,7 @@ class _$LoadedAssetsBlocState implements LoadedAssetsBlocState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Asset> assets)? loaded,
+    TResult? Function(AssetsData assets)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(assets);
@@ -410,7 +413,7 @@ class _$LoadedAssetsBlocState implements LoadedAssetsBlocState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Asset> assets)? loaded,
+    TResult Function(AssetsData assets)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -459,10 +462,10 @@ class _$LoadedAssetsBlocState implements LoadedAssetsBlocState {
 }
 
 abstract class LoadedAssetsBlocState implements AssetsBlocState {
-  const factory LoadedAssetsBlocState({required final List<Asset> assets}) =
+  const factory LoadedAssetsBlocState({required final AssetsData assets}) =
       _$LoadedAssetsBlocState;
 
-  List<Asset> get assets;
+  AssetsData get assets;
   @JsonKey(ignore: true)
   _$$LoadedAssetsBlocStateCopyWith<_$LoadedAssetsBlocState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -535,7 +538,7 @@ class _$ErrorAssetsBlocState implements ErrorAssetsBlocState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Asset> assets) loaded,
+    required TResult Function(AssetsData assets) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -546,7 +549,7 @@ class _$ErrorAssetsBlocState implements ErrorAssetsBlocState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Asset> assets)? loaded,
+    TResult? Function(AssetsData assets)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -557,7 +560,7 @@ class _$ErrorAssetsBlocState implements ErrorAssetsBlocState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Asset> assets)? loaded,
+    TResult Function(AssetsData assets)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

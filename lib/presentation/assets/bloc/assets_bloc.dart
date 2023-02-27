@@ -19,7 +19,7 @@ class AssetsBloc extends Bloc<AssetsBlocEvent, AssetsBlocState> {
       final result = await _repository.getAssets();
 
       if (result is SuccessfulResult<AssetsData>) {
-        return emit(AssetsBlocState.loaded(assets: result.data!.data));
+        return emit(AssetsBlocState.loaded(assets: result.data!));
       }
 
       if (result is ErrorResult) {
