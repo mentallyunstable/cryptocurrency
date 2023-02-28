@@ -28,8 +28,6 @@ class Asset with _$Asset {
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
 
-  String get price => '${priceUsd.toStringAsFixed(2)}\$';
-
   String get priceChange =>
       '${changePercent24Hr >= 0 ? '+' : ''}${changePercent24Hr.toStringAsFixed(3)}%';
 }

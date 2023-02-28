@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:cryptocurrency/_import.dart';
-
 class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({super.key});
 

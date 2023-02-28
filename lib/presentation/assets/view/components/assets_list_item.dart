@@ -44,7 +44,7 @@ class AssetsListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  asset.price,
+                  asset.priceUsd.currencyFormat,
                   style: theme.textTheme.titleMedium,
                 ),
                 const SizedBox(height: 8),

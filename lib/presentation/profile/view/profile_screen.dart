@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:cryptocurrency/_import.dart';
-
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 

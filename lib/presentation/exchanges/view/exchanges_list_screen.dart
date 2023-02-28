@@ -1,8 +1,7 @@
-import 'package:cryptocurrency/presentation/exchanges/view/components/exchange_list_item.dart';
-import 'package:cryptocurrency/presentation/exchanges/view/components/exchanges_list_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cryptocurrency/_import.dart';
+import 'package:cryptocurrency/presentation/exchanges/view/components/exchanges_list_view.dart';
 
 class ExchangesListScreen extends StatelessWidget {
   const ExchangesListScreen({super.key});

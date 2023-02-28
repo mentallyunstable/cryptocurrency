@@ -1,3 +1,4 @@
+export 'bloc/asset_markets/_asset_markets_bloc.dart';
 export 'bloc/_assets_bloc.dart';
 
 export 'view/asset_details_screen.dart';

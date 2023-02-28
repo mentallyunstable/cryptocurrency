@@ -11,5 +11,6 @@ class RepositoriesInjector extends Injector {
 
     container.registerLazySingleton(() => AssetsRepository(network));
     container.registerLazySingleton(() => ExchangesRepository(network));
+    container.registerLazySingleton(() => AssetMarketsRepository(network));
   }
 }
