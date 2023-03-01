@@ -32,7 +32,7 @@ class ExchangeListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(exchange.tradingVolume),
+              Text(exchange.volumeUsd.currencyFormat),
               const SizedBox(height: 8),
               Text(
                 '${exchange.percentTotalVolume?.toStringAsFixed(2) ?? '?? '}%',

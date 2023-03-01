@@ -20,7 +20,9 @@ ExchangesData _$ExchangesDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ExchangesData {
+  @HiveField(0)
   List<Exchange> get data => throw _privateConstructorUsedError;
+  @HiveField(1)
   int get timestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +37,7 @@ abstract class $ExchangesDataCopyWith<$Res> {
           ExchangesData value, $Res Function(ExchangesData) then) =
       _$ExchangesDataCopyWithImpl<$Res, ExchangesData>;
   @useResult
-  $Res call({List<Exchange> data, int timestamp});
+  $Res call({@HiveField(0) List<Exchange> data, @HiveField(1) int timestamp});
 }
 
 /// @nodoc
@@ -75,7 +77,7 @@ abstract class _$$_ExchangesDataCopyWith<$Res>
       __$$_ExchangesDataCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Exchange> data, int timestamp});
+  $Res call({@HiveField(0) List<Exchange> data, @HiveField(1) int timestamp});
 }
 
 /// @nodoc
@@ -107,9 +109,11 @@ class __$$_ExchangesDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: StorageKeys.exchangesDataKey)
 class _$_ExchangesData implements _ExchangesData {
   const _$_ExchangesData(
-      {required final List<Exchange> data, required this.timestamp})
+      {@HiveField(0) required final List<Exchange> data,
+      @HiveField(1) required this.timestamp})
       : _data = data;
 
   factory _$_ExchangesData.fromJson(Map<String, dynamic> json) =>
@@ -117,6 +121,7 @@ class _$_ExchangesData implements _ExchangesData {
 
   final List<Exchange> _data;
   @override
+  @HiveField(0)
   List<Exchange> get data {
     if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
@@ -124,6 +129,7 @@ class _$_ExchangesData implements _ExchangesData {
   }
 
   @override
+  @HiveField(1)
   final int timestamp;
 
   @override
@@ -162,15 +168,17 @@ class _$_ExchangesData implements _ExchangesData {
 
 abstract class _ExchangesData implements ExchangesData {
   const factory _ExchangesData(
-      {required final List<Exchange> data,
-      required final int timestamp}) = _$_ExchangesData;
+      {@HiveField(0) required final List<Exchange> data,
+      @HiveField(1) required final int timestamp}) = _$_ExchangesData;
 
   factory _ExchangesData.fromJson(Map<String, dynamic> json) =
       _$_ExchangesData.fromJson;
 
   @override
+  @HiveField(0)
   List<Exchange> get data;
   @override
+  @HiveField(1)
   int get timestamp;
   @override
   @JsonKey(ignore: true)

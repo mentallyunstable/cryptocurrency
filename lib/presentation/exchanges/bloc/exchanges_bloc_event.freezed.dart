@@ -16,19 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ExchangesBlocEvent {
+  bool get local => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function(bool local) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
+    TResult? Function(bool local)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(bool local)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +49,10 @@ mixin _$ExchangesBlocEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ExchangesBlocEventCopyWith<ExchangesBlocEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,6 +60,8 @@ abstract class $ExchangesBlocEventCopyWith<$Res> {
   factory $ExchangesBlocEventCopyWith(
           ExchangesBlocEvent value, $Res Function(ExchangesBlocEvent) then) =
       _$ExchangesBlocEventCopyWithImpl<$Res, ExchangesBlocEvent>;
+  @useResult
+  $Res call({bool local});
 }
 
 /// @nodoc
@@ -66,13 +73,30 @@ class _$ExchangesBlocEventCopyWithImpl<$Res, $Val extends ExchangesBlocEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? local = null,
+  }) {
+    return _then(_value.copyWith(
+      local: null == local
+          ? _value.local
+          : local // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$LoadExchangesBlocEventCopyWith<$Res> {
+abstract class _$$LoadExchangesBlocEventCopyWith<$Res>
+    implements $ExchangesBlocEventCopyWith<$Res> {
   factory _$$LoadExchangesBlocEventCopyWith(_$LoadExchangesBlocEvent value,
           $Res Function(_$LoadExchangesBlocEvent) then) =
       __$$LoadExchangesBlocEventCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool local});
 }
 
 /// @nodoc
@@ -82,51 +106,77 @@ class __$$LoadExchangesBlocEventCopyWithImpl<$Res>
   __$$LoadExchangesBlocEventCopyWithImpl(_$LoadExchangesBlocEvent _value,
       $Res Function(_$LoadExchangesBlocEvent) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? local = null,
+  }) {
+    return _then(_$LoadExchangesBlocEvent(
+      local: null == local
+          ? _value.local
+          : local // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LoadExchangesBlocEvent implements LoadExchangesBlocEvent {
-  const _$LoadExchangesBlocEvent();
+  const _$LoadExchangesBlocEvent({this.local = false});
+
+  @override
+  @JsonKey()
+  final bool local;
 
   @override
   String toString() {
-    return 'ExchangesBlocEvent.load()';
+    return 'ExchangesBlocEvent.load(local: $local)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadExchangesBlocEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadExchangesBlocEvent &&
+            (identical(other.local, local) || other.local == local));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, local);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadExchangesBlocEventCopyWith<_$LoadExchangesBlocEvent> get copyWith =>
+      __$$LoadExchangesBlocEventCopyWithImpl<_$LoadExchangesBlocEvent>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function(bool local) load,
   }) {
-    return load();
+    return load(local);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
+    TResult? Function(bool local)? load,
   }) {
-    return load?.call();
+    return load?.call(local);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(bool local)? load,
     required TResult orElse(),
   }) {
     if (load != null) {
-      return load();
+      return load(local);
     }
     return orElse();
   }
@@ -161,5 +211,13 @@ class _$LoadExchangesBlocEvent implements LoadExchangesBlocEvent {
 }
 
 abstract class LoadExchangesBlocEvent implements ExchangesBlocEvent {
-  const factory LoadExchangesBlocEvent() = _$LoadExchangesBlocEvent;
+  const factory LoadExchangesBlocEvent({final bool local}) =
+      _$LoadExchangesBlocEvent;
+
+  @override
+  bool get local;
+  @override
+  @JsonKey(ignore: true)
+  _$$LoadExchangesBlocEventCopyWith<_$LoadExchangesBlocEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }

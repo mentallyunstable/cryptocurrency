@@ -20,7 +20,9 @@ AssetsData _$AssetsDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AssetsData {
+  @HiveField(0)
   List<Asset> get data => throw _privateConstructorUsedError;
+  @HiveField(1)
   int get timestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +37,7 @@ abstract class $AssetsDataCopyWith<$Res> {
           AssetsData value, $Res Function(AssetsData) then) =
       _$AssetsDataCopyWithImpl<$Res, AssetsData>;
   @useResult
-  $Res call({List<Asset> data, int timestamp});
+  $Res call({@HiveField(0) List<Asset> data, @HiveField(1) int timestamp});
 }
 
 /// @nodoc
@@ -75,7 +77,7 @@ abstract class _$$_AssetsDataCopyWith<$Res>
       __$$_AssetsDataCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Asset> data, int timestamp});
+  $Res call({@HiveField(0) List<Asset> data, @HiveField(1) int timestamp});
 }
 
 /// @nodoc
@@ -107,9 +109,11 @@ class __$$_AssetsDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: StorageKeys.assetsDataKey)
 class _$_AssetsData implements _AssetsData {
   const _$_AssetsData(
-      {required final List<Asset> data, required this.timestamp})
+      {@HiveField(0) required final List<Asset> data,
+      @HiveField(1) required this.timestamp})
       : _data = data;
 
   factory _$_AssetsData.fromJson(Map<String, dynamic> json) =>
@@ -117,6 +121,7 @@ class _$_AssetsData implements _AssetsData {
 
   final List<Asset> _data;
   @override
+  @HiveField(0)
   List<Asset> get data {
     if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
@@ -124,6 +129,7 @@ class _$_AssetsData implements _AssetsData {
   }
 
   @override
+  @HiveField(1)
   final int timestamp;
 
   @override
@@ -162,15 +168,17 @@ class _$_AssetsData implements _AssetsData {
 
 abstract class _AssetsData implements AssetsData {
   const factory _AssetsData(
-      {required final List<Asset> data,
-      required final int timestamp}) = _$_AssetsData;
+      {@HiveField(0) required final List<Asset> data,
+      @HiveField(1) required final int timestamp}) = _$_AssetsData;
 
   factory _AssetsData.fromJson(Map<String, dynamic> json) =
       _$_AssetsData.fromJson;
 
   @override
+  @HiveField(0)
   List<Asset> get data;
   @override
+  @HiveField(1)
   int get timestamp;
   @override
   @JsonKey(ignore: true)

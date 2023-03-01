@@ -20,18 +20,27 @@ Exchange _$ExchangeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Exchange {
+  @HiveField(0)
   String get exchangeId => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get name => throw _privateConstructorUsedError;
+  @HiveField(2)
   @JsonKey(fromJson: stringToInt)
   int get rank => throw _privateConstructorUsedError;
+  @HiveField(3)
   @JsonKey(fromJson: stringToNullableDouble)
   double? get percentTotalVolume => throw _privateConstructorUsedError;
+  @HiveField(4)
   @JsonKey(fromJson: stringToNullableDouble)
   double? get volumeUsd => throw _privateConstructorUsedError;
+  @HiveField(5)
   @JsonKey(fromJson: stringToInt)
   int get tradingPairs => throw _privateConstructorUsedError;
+  @HiveField(6)
   bool? get socket => throw _privateConstructorUsedError;
+  @HiveField(7)
   String get exchangeUrl => throw _privateConstructorUsedError;
+  @HiveField(8)
   int get updated => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,15 +55,28 @@ abstract class $ExchangeCopyWith<$Res> {
       _$ExchangeCopyWithImpl<$Res, Exchange>;
   @useResult
   $Res call(
-      {String exchangeId,
-      String name,
-      @JsonKey(fromJson: stringToInt) int rank,
-      @JsonKey(fromJson: stringToNullableDouble) double? percentTotalVolume,
-      @JsonKey(fromJson: stringToNullableDouble) double? volumeUsd,
-      @JsonKey(fromJson: stringToInt) int tradingPairs,
-      bool? socket,
-      String exchangeUrl,
-      int updated});
+      {@HiveField(0)
+          String exchangeId,
+      @HiveField(1)
+          String name,
+      @HiveField(2)
+      @JsonKey(fromJson: stringToInt)
+          int rank,
+      @HiveField(3)
+      @JsonKey(fromJson: stringToNullableDouble)
+          double? percentTotalVolume,
+      @HiveField(4)
+      @JsonKey(fromJson: stringToNullableDouble)
+          double? volumeUsd,
+      @HiveField(5)
+      @JsonKey(fromJson: stringToInt)
+          int tradingPairs,
+      @HiveField(6)
+          bool? socket,
+      @HiveField(7)
+          String exchangeUrl,
+      @HiveField(8)
+          int updated});
 }
 
 /// @nodoc
@@ -129,15 +151,28 @@ abstract class _$$_ExchangeCopyWith<$Res> implements $ExchangeCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String exchangeId,
-      String name,
-      @JsonKey(fromJson: stringToInt) int rank,
-      @JsonKey(fromJson: stringToNullableDouble) double? percentTotalVolume,
-      @JsonKey(fromJson: stringToNullableDouble) double? volumeUsd,
-      @JsonKey(fromJson: stringToInt) int tradingPairs,
-      bool? socket,
-      String exchangeUrl,
-      int updated});
+      {@HiveField(0)
+          String exchangeId,
+      @HiveField(1)
+          String name,
+      @HiveField(2)
+      @JsonKey(fromJson: stringToInt)
+          int rank,
+      @HiveField(3)
+      @JsonKey(fromJson: stringToNullableDouble)
+          double? percentTotalVolume,
+      @HiveField(4)
+      @JsonKey(fromJson: stringToNullableDouble)
+          double? volumeUsd,
+      @HiveField(5)
+      @JsonKey(fromJson: stringToInt)
+          int tradingPairs,
+      @HiveField(6)
+          bool? socket,
+      @HiveField(7)
+          String exchangeUrl,
+      @HiveField(8)
+          int updated});
 }
 
 /// @nodoc
@@ -204,47 +239,66 @@ class __$$_ExchangeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: StorageKeys.exchangeKey)
 class _$_Exchange extends _Exchange {
   const _$_Exchange(
-      {required this.exchangeId,
-      required this.name,
+      {@HiveField(0)
+          required this.exchangeId,
+      @HiveField(1)
+          required this.name,
+      @HiveField(2)
       @JsonKey(fromJson: stringToInt)
           required this.rank,
+      @HiveField(3)
       @JsonKey(fromJson: stringToNullableDouble)
           required this.percentTotalVolume,
+      @HiveField(4)
       @JsonKey(fromJson: stringToNullableDouble)
           required this.volumeUsd,
+      @HiveField(5)
       @JsonKey(fromJson: stringToInt)
           required this.tradingPairs,
-      required this.socket,
-      required this.exchangeUrl,
-      required this.updated})
+      @HiveField(6)
+          required this.socket,
+      @HiveField(7)
+          required this.exchangeUrl,
+      @HiveField(8)
+          required this.updated})
       : super._();
 
   factory _$_Exchange.fromJson(Map<String, dynamic> json) =>
       _$$_ExchangeFromJson(json);
 
   @override
+  @HiveField(0)
   final String exchangeId;
   @override
+  @HiveField(1)
   final String name;
   @override
+  @HiveField(2)
   @JsonKey(fromJson: stringToInt)
   final int rank;
   @override
+  @HiveField(3)
   @JsonKey(fromJson: stringToNullableDouble)
   final double? percentTotalVolume;
   @override
+  @HiveField(4)
   @JsonKey(fromJson: stringToNullableDouble)
   final double? volumeUsd;
   @override
+  @HiveField(5)
   @JsonKey(fromJson: stringToInt)
   final int tradingPairs;
   @override
+  @HiveField(6)
   final bool? socket;
   @override
+  @HiveField(7)
   final String exchangeUrl;
   @override
+  @HiveField(8)
   final int updated;
 
   @override
@@ -303,44 +357,62 @@ class _$_Exchange extends _Exchange {
 
 abstract class _Exchange extends Exchange {
   const factory _Exchange(
-      {required final String exchangeId,
-      required final String name,
+      {@HiveField(0)
+          required final String exchangeId,
+      @HiveField(1)
+          required final String name,
+      @HiveField(2)
       @JsonKey(fromJson: stringToInt)
           required final int rank,
+      @HiveField(3)
       @JsonKey(fromJson: stringToNullableDouble)
           required final double? percentTotalVolume,
+      @HiveField(4)
       @JsonKey(fromJson: stringToNullableDouble)
           required final double? volumeUsd,
+      @HiveField(5)
       @JsonKey(fromJson: stringToInt)
           required final int tradingPairs,
-      required final bool? socket,
-      required final String exchangeUrl,
-      required final int updated}) = _$_Exchange;
+      @HiveField(6)
+          required final bool? socket,
+      @HiveField(7)
+          required final String exchangeUrl,
+      @HiveField(8)
+          required final int updated}) = _$_Exchange;
   const _Exchange._() : super._();
 
   factory _Exchange.fromJson(Map<String, dynamic> json) = _$_Exchange.fromJson;
 
   @override
+  @HiveField(0)
   String get exchangeId;
   @override
+  @HiveField(1)
   String get name;
   @override
+  @HiveField(2)
   @JsonKey(fromJson: stringToInt)
   int get rank;
   @override
+  @HiveField(3)
   @JsonKey(fromJson: stringToNullableDouble)
   double? get percentTotalVolume;
   @override
+  @HiveField(4)
   @JsonKey(fromJson: stringToNullableDouble)
   double? get volumeUsd;
   @override
+  @HiveField(5)
   @JsonKey(fromJson: stringToInt)
   int get tradingPairs;
   @override
+  @HiveField(6)
   bool? get socket;
   @override
+  @HiveField(7)
   String get exchangeUrl;
   @override
+  @HiveField(8)
   int get updated;
   @override
   @JsonKey(ignore: true)

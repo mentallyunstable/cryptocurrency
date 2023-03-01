@@ -13,7 +13,9 @@ class _ExchangesScreenState extends State<ExchangesScreen>
     with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
-    context.read<ExchangesBloc>().add(const ExchangesBlocEvent.load());
+    context
+        .read<ExchangesBloc>()
+        .add(const ExchangesBlocEvent.load(local: true));
 
     super.initState();
   }

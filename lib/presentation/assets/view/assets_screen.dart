@@ -13,7 +13,7 @@ class _AssetsScreenState extends State<AssetsScreen>
     with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
-    context.read<AssetsBloc>().add(const AssetsBlocEvent.load());
+    context.read<AssetsBloc>().add(const AssetsBlocEvent.load(local: true));
 
     super.initState();
   }

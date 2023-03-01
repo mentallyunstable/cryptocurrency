@@ -2,8 +2,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:cryptocurrency/_import.dart';
+import 'package:hive/hive.dart';
 
 part 'asset.freezed.dart';
+part 'asset.hive.dart';
 
 part 'asset.g.dart';
 
@@ -11,19 +13,34 @@ part 'asset.g.dart';
 class Asset with _$Asset {
   const Asset._();
 
+  @HiveType(typeId: StorageKeys.assetKey)
   const factory Asset({
-    required final String id,
-    @JsonKey(fromJson: stringToInt) required final int rank,
-    required final String symbol,
-    required final String name,
-    @JsonKey(fromJson: stringToDouble) required final double supply,
-    @JsonKey(fromJson: stringToNullableDouble) required final double? maxSupply,
-    @JsonKey(fromJson: stringToDouble) required final double marketCapUsd,
-    @JsonKey(fromJson: stringToDouble) required final double volumeUsd24Hr,
-    @JsonKey(fromJson: stringToDouble) required final double priceUsd,
-    @JsonKey(fromJson: stringToDouble) required final double changePercent24Hr,
-    @JsonKey(fromJson: stringToNullableDouble) required final double? vwap24Hr,
-    required final String? explorer,
+    @HiveField(0) required final String id,
+    @HiveField(1) @JsonKey(fromJson: stringToInt) required final int rank,
+    @HiveField(2) required final String symbol,
+    @HiveField(3) required final String name,
+    @HiveField(4)
+    @JsonKey(fromJson: stringToDouble)
+        required final double supply,
+    @HiveField(5)
+    @JsonKey(fromJson: stringToNullableDouble)
+        required final double? maxSupply,
+    @HiveField(6)
+    @JsonKey(fromJson: stringToDouble)
+        required final double marketCapUsd,
+    @HiveField(7)
+    @JsonKey(fromJson: stringToDouble)
+        required final double volumeUsd24Hr,
+    @HiveField(8)
+    @JsonKey(fromJson: stringToDouble)
+        required final double priceUsd,
+    @HiveField(9)
+    @JsonKey(fromJson: stringToDouble)
+        required final double changePercent24Hr,
+    @HiveField(10)
+    @JsonKey(fromJson: stringToNullableDouble)
+        required final double? vwap24Hr,
+    @HiveField(11) required final String? explorer,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);

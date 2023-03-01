@@ -20,25 +20,37 @@ Asset _$AssetFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Asset {
+  @HiveField(0)
   String get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   @JsonKey(fromJson: stringToInt)
   int get rank => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get symbol => throw _privateConstructorUsedError;
+  @HiveField(3)
   String get name => throw _privateConstructorUsedError;
+  @HiveField(4)
   @JsonKey(fromJson: stringToDouble)
   double get supply => throw _privateConstructorUsedError;
+  @HiveField(5)
   @JsonKey(fromJson: stringToNullableDouble)
   double? get maxSupply => throw _privateConstructorUsedError;
+  @HiveField(6)
   @JsonKey(fromJson: stringToDouble)
   double get marketCapUsd => throw _privateConstructorUsedError;
+  @HiveField(7)
   @JsonKey(fromJson: stringToDouble)
   double get volumeUsd24Hr => throw _privateConstructorUsedError;
+  @HiveField(8)
   @JsonKey(fromJson: stringToDouble)
   double get priceUsd => throw _privateConstructorUsedError;
+  @HiveField(9)
   @JsonKey(fromJson: stringToDouble)
   double get changePercent24Hr => throw _privateConstructorUsedError;
+  @HiveField(10)
   @JsonKey(fromJson: stringToNullableDouble)
   double? get vwap24Hr => throw _privateConstructorUsedError;
+  @HiveField(11)
   String? get explorer => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,18 +64,38 @@ abstract class $AssetCopyWith<$Res> {
       _$AssetCopyWithImpl<$Res, Asset>;
   @useResult
   $Res call(
-      {String id,
-      @JsonKey(fromJson: stringToInt) int rank,
-      String symbol,
-      String name,
-      @JsonKey(fromJson: stringToDouble) double supply,
-      @JsonKey(fromJson: stringToNullableDouble) double? maxSupply,
-      @JsonKey(fromJson: stringToDouble) double marketCapUsd,
-      @JsonKey(fromJson: stringToDouble) double volumeUsd24Hr,
-      @JsonKey(fromJson: stringToDouble) double priceUsd,
-      @JsonKey(fromJson: stringToDouble) double changePercent24Hr,
-      @JsonKey(fromJson: stringToNullableDouble) double? vwap24Hr,
-      String? explorer});
+      {@HiveField(0)
+          String id,
+      @HiveField(1)
+      @JsonKey(fromJson: stringToInt)
+          int rank,
+      @HiveField(2)
+          String symbol,
+      @HiveField(3)
+          String name,
+      @HiveField(4)
+      @JsonKey(fromJson: stringToDouble)
+          double supply,
+      @HiveField(5)
+      @JsonKey(fromJson: stringToNullableDouble)
+          double? maxSupply,
+      @HiveField(6)
+      @JsonKey(fromJson: stringToDouble)
+          double marketCapUsd,
+      @HiveField(7)
+      @JsonKey(fromJson: stringToDouble)
+          double volumeUsd24Hr,
+      @HiveField(8)
+      @JsonKey(fromJson: stringToDouble)
+          double priceUsd,
+      @HiveField(9)
+      @JsonKey(fromJson: stringToDouble)
+          double changePercent24Hr,
+      @HiveField(10)
+      @JsonKey(fromJson: stringToNullableDouble)
+          double? vwap24Hr,
+      @HiveField(11)
+          String? explorer});
 }
 
 /// @nodoc
@@ -152,18 +184,38 @@ abstract class _$$_AssetCopyWith<$Res> implements $AssetCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      @JsonKey(fromJson: stringToInt) int rank,
-      String symbol,
-      String name,
-      @JsonKey(fromJson: stringToDouble) double supply,
-      @JsonKey(fromJson: stringToNullableDouble) double? maxSupply,
-      @JsonKey(fromJson: stringToDouble) double marketCapUsd,
-      @JsonKey(fromJson: stringToDouble) double volumeUsd24Hr,
-      @JsonKey(fromJson: stringToDouble) double priceUsd,
-      @JsonKey(fromJson: stringToDouble) double changePercent24Hr,
-      @JsonKey(fromJson: stringToNullableDouble) double? vwap24Hr,
-      String? explorer});
+      {@HiveField(0)
+          String id,
+      @HiveField(1)
+      @JsonKey(fromJson: stringToInt)
+          int rank,
+      @HiveField(2)
+          String symbol,
+      @HiveField(3)
+          String name,
+      @HiveField(4)
+      @JsonKey(fromJson: stringToDouble)
+          double supply,
+      @HiveField(5)
+      @JsonKey(fromJson: stringToNullableDouble)
+          double? maxSupply,
+      @HiveField(6)
+      @JsonKey(fromJson: stringToDouble)
+          double marketCapUsd,
+      @HiveField(7)
+      @JsonKey(fromJson: stringToDouble)
+          double volumeUsd24Hr,
+      @HiveField(8)
+      @JsonKey(fromJson: stringToDouble)
+          double priceUsd,
+      @HiveField(9)
+      @JsonKey(fromJson: stringToDouble)
+          double changePercent24Hr,
+      @HiveField(10)
+      @JsonKey(fromJson: stringToNullableDouble)
+          double? vwap24Hr,
+      @HiveField(11)
+          String? explorer});
 }
 
 /// @nodoc
@@ -243,56 +295,89 @@ class __$$_AssetCopyWithImpl<$Res> extends _$AssetCopyWithImpl<$Res, _$_Asset>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: StorageKeys.assetKey)
 class _$_Asset extends _Asset {
   const _$_Asset(
-      {required this.id,
-      @JsonKey(fromJson: stringToInt) required this.rank,
-      required this.symbol,
-      required this.name,
-      @JsonKey(fromJson: stringToDouble) required this.supply,
-      @JsonKey(fromJson: stringToNullableDouble) required this.maxSupply,
-      @JsonKey(fromJson: stringToDouble) required this.marketCapUsd,
-      @JsonKey(fromJson: stringToDouble) required this.volumeUsd24Hr,
-      @JsonKey(fromJson: stringToDouble) required this.priceUsd,
-      @JsonKey(fromJson: stringToDouble) required this.changePercent24Hr,
-      @JsonKey(fromJson: stringToNullableDouble) required this.vwap24Hr,
-      required this.explorer})
+      {@HiveField(0)
+          required this.id,
+      @HiveField(1)
+      @JsonKey(fromJson: stringToInt)
+          required this.rank,
+      @HiveField(2)
+          required this.symbol,
+      @HiveField(3)
+          required this.name,
+      @HiveField(4)
+      @JsonKey(fromJson: stringToDouble)
+          required this.supply,
+      @HiveField(5)
+      @JsonKey(fromJson: stringToNullableDouble)
+          required this.maxSupply,
+      @HiveField(6)
+      @JsonKey(fromJson: stringToDouble)
+          required this.marketCapUsd,
+      @HiveField(7)
+      @JsonKey(fromJson: stringToDouble)
+          required this.volumeUsd24Hr,
+      @HiveField(8)
+      @JsonKey(fromJson: stringToDouble)
+          required this.priceUsd,
+      @HiveField(9)
+      @JsonKey(fromJson: stringToDouble)
+          required this.changePercent24Hr,
+      @HiveField(10)
+      @JsonKey(fromJson: stringToNullableDouble)
+          required this.vwap24Hr,
+      @HiveField(11)
+          required this.explorer})
       : super._();
 
   factory _$_Asset.fromJson(Map<String, dynamic> json) =>
       _$$_AssetFromJson(json);
 
   @override
+  @HiveField(0)
   final String id;
   @override
+  @HiveField(1)
   @JsonKey(fromJson: stringToInt)
   final int rank;
   @override
+  @HiveField(2)
   final String symbol;
   @override
+  @HiveField(3)
   final String name;
   @override
+  @HiveField(4)
   @JsonKey(fromJson: stringToDouble)
   final double supply;
   @override
+  @HiveField(5)
   @JsonKey(fromJson: stringToNullableDouble)
   final double? maxSupply;
   @override
+  @HiveField(6)
   @JsonKey(fromJson: stringToDouble)
   final double marketCapUsd;
   @override
+  @HiveField(7)
   @JsonKey(fromJson: stringToDouble)
   final double volumeUsd24Hr;
   @override
+  @HiveField(8)
   @JsonKey(fromJson: stringToDouble)
   final double priceUsd;
   @override
+  @HiveField(9)
   @JsonKey(fromJson: stringToDouble)
   final double changePercent24Hr;
   @override
+  @HiveField(10)
   @JsonKey(fromJson: stringToNullableDouble)
   final double? vwap24Hr;
   @override
+  @HiveField(11)
   final String? explorer;
 
   @override
@@ -359,61 +444,85 @@ class _$_Asset extends _Asset {
 
 abstract class _Asset extends Asset {
   const factory _Asset(
-      {required final String id,
+      {@HiveField(0)
+          required final String id,
+      @HiveField(1)
       @JsonKey(fromJson: stringToInt)
           required final int rank,
-      required final String symbol,
-      required final String name,
+      @HiveField(2)
+          required final String symbol,
+      @HiveField(3)
+          required final String name,
+      @HiveField(4)
       @JsonKey(fromJson: stringToDouble)
           required final double supply,
+      @HiveField(5)
       @JsonKey(fromJson: stringToNullableDouble)
           required final double? maxSupply,
+      @HiveField(6)
       @JsonKey(fromJson: stringToDouble)
           required final double marketCapUsd,
+      @HiveField(7)
       @JsonKey(fromJson: stringToDouble)
           required final double volumeUsd24Hr,
+      @HiveField(8)
       @JsonKey(fromJson: stringToDouble)
           required final double priceUsd,
+      @HiveField(9)
       @JsonKey(fromJson: stringToDouble)
           required final double changePercent24Hr,
+      @HiveField(10)
       @JsonKey(fromJson: stringToNullableDouble)
           required final double? vwap24Hr,
-      required final String? explorer}) = _$_Asset;
+      @HiveField(11)
+          required final String? explorer}) = _$_Asset;
   const _Asset._() : super._();
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$_Asset.fromJson;
 
   @override
+  @HiveField(0)
   String get id;
   @override
+  @HiveField(1)
   @JsonKey(fromJson: stringToInt)
   int get rank;
   @override
+  @HiveField(2)
   String get symbol;
   @override
+  @HiveField(3)
   String get name;
   @override
+  @HiveField(4)
   @JsonKey(fromJson: stringToDouble)
   double get supply;
   @override
+  @HiveField(5)
   @JsonKey(fromJson: stringToNullableDouble)
   double? get maxSupply;
   @override
+  @HiveField(6)
   @JsonKey(fromJson: stringToDouble)
   double get marketCapUsd;
   @override
+  @HiveField(7)
   @JsonKey(fromJson: stringToDouble)
   double get volumeUsd24Hr;
   @override
+  @HiveField(8)
   @JsonKey(fromJson: stringToDouble)
   double get priceUsd;
   @override
+  @HiveField(9)
   @JsonKey(fromJson: stringToDouble)
   double get changePercent24Hr;
   @override
+  @HiveField(10)
   @JsonKey(fromJson: stringToNullableDouble)
   double? get vwap24Hr;
   @override
+  @HiveField(11)
   String? get explorer;
   @override
   @JsonKey(ignore: true)

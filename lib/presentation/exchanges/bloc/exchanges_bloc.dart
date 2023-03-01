@@ -14,11 +14,25 @@ class ExchangesBloc extends Bloc<ExchangesBlocEvent, ExchangesBlocState> {
     Emitter<ExchangesBlocState> emit,
   ) async {
     try {
+      if (event.local) {
+        final data = container<StorageService>()
+            .exchangesBox!
+            .get(StorageKeys.exchangesDataKey);
+
+        if (data != null) {
+          return emit(ExchangesBlocState.loaded(exchanges: data));
+        }
+      }
+
       emit(const ExchangesBlocState.loading());
 
       final Result result = await _repository.getExchanges();
 
       if (result is SuccessfulResult<ExchangesData>) {
+        container<StorageService>()
+            .exchangesBox!
+            .put(StorageKeys.exchangesDataKey, result.data);
+
         return emit(ExchangesBlocState.loaded(exchanges: result.data!));
       }
 

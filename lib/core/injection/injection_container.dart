@@ -15,7 +15,11 @@ class InjectionContainer {
 
   const InjectionContainer._();
 
-  static void inject() {
+  static Future<void> inject() async {
+    final storage = StorageService();
+    await storage.init();
+    container.registerLazySingleton(() => storage);
+
     for (final injector in injectors) {
       injector.inject();
     }

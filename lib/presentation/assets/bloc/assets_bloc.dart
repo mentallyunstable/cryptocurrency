@@ -14,11 +14,25 @@ class AssetsBloc extends Bloc<AssetsBlocEvent, AssetsBlocState> {
     final Emitter<AssetsBlocState> emit,
   ) async {
     try {
+      if (event.local) {
+        final data = container<StorageService>().assetsBox!.get(
+              StorageKeys.assetsDataKey,
+            );
+
+        if (data != null) {
+          return emit(AssetsBlocState.loaded(assets: data));
+        }
+      }
+
       emit(const AssetsBlocState.loading());
 
       final result = await _repository.getAssets();
 
       if (result is SuccessfulResult<AssetsData>) {
+        container<StorageService>()
+            .assetsBox!
+            .put(StorageKeys.assetsDataKey, result.data!);
+
         return emit(AssetsBlocState.loaded(assets: result.data!));
       }
 
@@ -35,7 +49,9 @@ class AssetsBloc extends Bloc<AssetsBlocEvent, AssetsBlocState> {
           message: ErrorMessages.unexpectedError,
         ));
       }
-    } catch (exception) {
+    } catch (exception, stackTrace) {
+      DebugLogger.logException(exception, stackTrace);
+
       return emit(const AssetsBlocState.error(
         message: ErrorMessages.unexpectedError,
       ));

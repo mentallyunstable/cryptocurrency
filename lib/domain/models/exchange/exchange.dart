@@ -1,10 +1,11 @@
 // ignore_for_file: invalid_annotation_target
-import 'package:intl/intl.dart';
+import 'package:hive/hive.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:cryptocurrency/_import.dart';
 
 part 'exchange.freezed.dart';
+part 'exchange.hive.dart';
 
 part 'exchange.g.dart';
 
@@ -12,22 +13,25 @@ part 'exchange.g.dart';
 class Exchange with _$Exchange {
   const Exchange._();
 
+  @HiveType(typeId: StorageKeys.exchangeKey)
   const factory Exchange({
-    required final String exchangeId,
-    required final String name,
-    @JsonKey(fromJson: stringToInt) required final int rank,
+    @HiveField(0) required final String exchangeId,
+    @HiveField(1) required final String name,
+    @HiveField(2) @JsonKey(fromJson: stringToInt) required final int rank,
+    @HiveField(3)
     @JsonKey(fromJson: stringToNullableDouble)
         required final double? percentTotalVolume,
-    @JsonKey(fromJson: stringToNullableDouble) required final double? volumeUsd,
-    @JsonKey(fromJson: stringToInt) required final int tradingPairs,
-    required final bool? socket,
-    required final String exchangeUrl,
-    required final int updated,
+    @HiveField(4)
+    @JsonKey(fromJson: stringToNullableDouble)
+        required final double? volumeUsd,
+    @HiveField(5)
+    @JsonKey(fromJson: stringToInt)
+        required final int tradingPairs,
+    @HiveField(6) required final bool? socket,
+    @HiveField(7) required final String exchangeUrl,
+    @HiveField(8) required final int updated,
   }) = _Exchange;
 
   factory Exchange.fromJson(Map<String, dynamic> json) =>
       _$ExchangeFromJson(json);
-
-  String get tradingVolume =>
-      NumberFormat.currency(locale: 'en_US', symbol: '\$').format(volumeUsd);
 }

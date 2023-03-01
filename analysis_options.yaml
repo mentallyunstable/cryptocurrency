@@ -5,7 +5,7 @@ analyzer:
     - test/**
     - lib/**/*.g.dart
     - lib/**/*.freezed.dart
-    - lib/**/*.gr.dart
+    - lib/**/*.hive.dart
   plugins:
     - dart_code_metrics
 
@@ -32,6 +32,7 @@ dart_code_metrics:
   metrics-exclude:
     - lib/**/*.g.dart
     - lib/**/*.freezed.dart
+    - lib/**/*.hive.dart
   rules:
     - avoid-redundant-async
     - avoid-passing-async-when-sync-expected
