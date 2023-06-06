@@ -1,16 +1,22 @@
-import 'package:cryptocurrency/_import.dart';
+import 'package:cryptocurrency/import.dart';
 
 class RepositoriesInjector extends Injector {
   const RepositoriesInjector();
 
   @override
-  void inject() {
+  Future inject() async {
     final network = NetworkService(const NetworkOptions(
       baseUrl: Api.baseUrl,
     ));
 
-    container.registerLazySingleton(() => AssetsRepository(network));
-    container.registerLazySingleton(() => ExchangesRepository(network));
-    container.registerLazySingleton(() => AssetMarketsRepository(network));
+    container.registerLazySingleton<AssetsRepository>(
+      () => ProdAssetsRepository(network),
+    );
+    container.registerLazySingleton<ExchangesRepository>(
+      () => ProdExchangesRepository(network),
+    );
+    container.registerLazySingleton<AssetMarketsRepository>(
+      () => ProdAssetMarketsRepository(network),
+    );
   }
 }

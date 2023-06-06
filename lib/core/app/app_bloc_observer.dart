@@ -1,4 +1,4 @@
-import 'package:cryptocurrency/_import.dart';
+import 'package:cryptocurrency/import.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override

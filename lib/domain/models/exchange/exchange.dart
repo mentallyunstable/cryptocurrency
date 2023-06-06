@@ -2,7 +2,7 @@
 import 'package:hive/hive.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:cryptocurrency/_import.dart';
+import 'package:cryptocurrency/import.dart';
 
 part 'exchange.freezed.dart';
 part 'exchange.hive.dart';

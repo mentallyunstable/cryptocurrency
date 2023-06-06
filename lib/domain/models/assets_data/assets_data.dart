@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
-import 'package:cryptocurrency/_import.dart';
+import 'package:cryptocurrency/import.dart';
 
 part 'assets_data.freezed.dart';
 

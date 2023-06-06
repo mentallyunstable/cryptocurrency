@@ -1,61 +1,35 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
 part of 'app_router.dart';
 
-class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    HomeRoute.name: (routeData) {
-      return CupertinoPageX<dynamic>(
-        routeData: routeData,
-        child: const HomeScreen(),
-      );
-    },
-    AssetsRoute.name: (routeData) {
-      return CupertinoPageX<dynamic>(
-        routeData: routeData,
-        child: const AssetsScreen(),
-      );
-    },
-    ExchangesRoute.name: (routeData) {
-      return CupertinoPageX<dynamic>(
-        routeData: routeData,
-        child: const ExchangesScreen(),
-      );
-    },
-    FavouriteRoute.name: (routeData) {
-      return CupertinoPageX<dynamic>(
-        routeData: routeData,
-        child: const FavouriteScreen(),
-      );
-    },
-    ProfileRoute.name: (routeData) {
-      return CupertinoPageX<dynamic>(
-        routeData: routeData,
-        child: const ProfileScreen(),
-      );
-    },
     AssetsListRoute.name: (routeData) {
-      return CupertinoPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const AssetsListScreen(),
       );
     },
+    AssetsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AssetsScreen(),
+      );
+    },
     AssetDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<AssetDetailsRouteArgs>();
-      return CupertinoPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: AssetDetailsScreen(
           key: args.key,
@@ -64,14 +38,20 @@ class _$AppRouter extends RootStackRouter {
       );
     },
     ExchangesListRoute.name: (routeData) {
-      return CupertinoPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const ExchangesListScreen(),
       );
     },
+    ExchangesRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ExchangesScreen(),
+      );
+    },
     ExchangeDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<ExchangeDetailsRouteArgs>();
-      return CupertinoPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: ExchangeDetailsScreen(
           key: args.key,
@@ -79,87 +59,39 @@ class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    FavouriteRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FavouriteScreen(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomeScreen(),
+      );
+    },
+    ProfileRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfileScreen(),
+      );
+    },
   };
-
-  @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
-          '/#redirect',
-          path: '/',
-          redirectTo: '/home',
-          fullMatch: true,
-        ),
-        RouteConfig(
-          HomeRoute.name,
-          path: '/home',
-          children: [
-            RouteConfig(
-              '#redirect',
-              path: '',
-              parent: HomeRoute.name,
-              redirectTo: 'assets',
-              fullMatch: true,
-            ),
-            RouteConfig(
-              AssetsRoute.name,
-              path: 'assets',
-              parent: HomeRoute.name,
-              children: [
-                RouteConfig(
-                  AssetsListRoute.name,
-                  path: '',
-                  parent: AssetsRoute.name,
-                ),
-                RouteConfig(
-                  AssetDetailsRoute.name,
-                  path: 'details',
-                  parent: AssetsRoute.name,
-                ),
-              ],
-            ),
-            RouteConfig(
-              ExchangesRoute.name,
-              path: 'exchanges',
-              parent: HomeRoute.name,
-              children: [
-                RouteConfig(
-                  ExchangesListRoute.name,
-                  path: '',
-                  parent: ExchangesRoute.name,
-                ),
-                RouteConfig(
-                  ExchangeDetailsRoute.name,
-                  path: 'details',
-                  parent: ExchangesRoute.name,
-                ),
-              ],
-            ),
-            RouteConfig(
-              FavouriteRoute.name,
-              path: 'favourite',
-              parent: HomeRoute.name,
-            ),
-            RouteConfig(
-              ProfileRoute.name,
-              path: 'profile',
-              parent: HomeRoute.name,
-            ),
-          ],
-        ),
-      ];
 }
 
 /// generated route for
-/// [HomeScreen]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
+/// [AssetsListScreen]
+class AssetsListRoute extends PageRouteInfo<void> {
+  const AssetsListRoute({List<PageRouteInfo>? children})
       : super(
-          HomeRoute.name,
-          path: '/home',
+          AssetsListRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'AssetsListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -168,60 +100,12 @@ class AssetsRoute extends PageRouteInfo<void> {
   const AssetsRoute({List<PageRouteInfo>? children})
       : super(
           AssetsRoute.name,
-          path: 'assets',
           initialChildren: children,
         );
 
   static const String name = 'AssetsRoute';
-}
 
-/// generated route for
-/// [ExchangesScreen]
-class ExchangesRoute extends PageRouteInfo<void> {
-  const ExchangesRoute({List<PageRouteInfo>? children})
-      : super(
-          ExchangesRoute.name,
-          path: 'exchanges',
-          initialChildren: children,
-        );
-
-  static const String name = 'ExchangesRoute';
-}
-
-/// generated route for
-/// [FavouriteScreen]
-class FavouriteRoute extends PageRouteInfo<void> {
-  const FavouriteRoute()
-      : super(
-          FavouriteRoute.name,
-          path: 'favourite',
-        );
-
-  static const String name = 'FavouriteRoute';
-}
-
-/// generated route for
-/// [ProfileScreen]
-class ProfileRoute extends PageRouteInfo<void> {
-  const ProfileRoute()
-      : super(
-          ProfileRoute.name,
-          path: 'profile',
-        );
-
-  static const String name = 'ProfileRoute';
-}
-
-/// generated route for
-/// [AssetsListScreen]
-class AssetsListRoute extends PageRouteInfo<void> {
-  const AssetsListRoute()
-      : super(
-          AssetsListRoute.name,
-          path: '',
-        );
-
-  static const String name = 'AssetsListRoute';
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -230,16 +114,20 @@ class AssetDetailsRoute extends PageRouteInfo<AssetDetailsRouteArgs> {
   AssetDetailsRoute({
     Key? key,
     required Asset asset,
+    List<PageRouteInfo>? children,
   }) : super(
           AssetDetailsRoute.name,
-          path: 'details',
           args: AssetDetailsRouteArgs(
             key: key,
             asset: asset,
           ),
+          initialChildren: children,
         );
 
   static const String name = 'AssetDetailsRoute';
+
+  static const PageInfo<AssetDetailsRouteArgs> page =
+      PageInfo<AssetDetailsRouteArgs>(name);
 }
 
 class AssetDetailsRouteArgs {
@@ -261,13 +149,29 @@ class AssetDetailsRouteArgs {
 /// generated route for
 /// [ExchangesListScreen]
 class ExchangesListRoute extends PageRouteInfo<void> {
-  const ExchangesListRoute()
+  const ExchangesListRoute({List<PageRouteInfo>? children})
       : super(
           ExchangesListRoute.name,
-          path: '',
+          initialChildren: children,
         );
 
   static const String name = 'ExchangesListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ExchangesScreen]
+class ExchangesRoute extends PageRouteInfo<void> {
+  const ExchangesRoute({List<PageRouteInfo>? children})
+      : super(
+          ExchangesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ExchangesRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -276,16 +180,20 @@ class ExchangeDetailsRoute extends PageRouteInfo<ExchangeDetailsRouteArgs> {
   ExchangeDetailsRoute({
     Key? key,
     required Exchange exchange,
+    List<PageRouteInfo>? children,
   }) : super(
           ExchangeDetailsRoute.name,
-          path: 'details',
           args: ExchangeDetailsRouteArgs(
             key: key,
             exchange: exchange,
           ),
+          initialChildren: children,
         );
 
   static const String name = 'ExchangeDetailsRoute';
+
+  static const PageInfo<ExchangeDetailsRouteArgs> page =
+      PageInfo<ExchangeDetailsRouteArgs>(name);
 }
 
 class ExchangeDetailsRouteArgs {
@@ -302,4 +210,46 @@ class ExchangeDetailsRouteArgs {
   String toString() {
     return 'ExchangeDetailsRouteArgs{key: $key, exchange: $exchange}';
   }
+}
+
+/// generated route for
+/// [FavouriteScreen]
+class FavouriteRoute extends PageRouteInfo<void> {
+  const FavouriteRoute({List<PageRouteInfo>? children})
+      : super(
+          FavouriteRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavouriteRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HomeScreen]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProfileScreen]
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

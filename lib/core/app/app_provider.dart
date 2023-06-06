@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:cryptocurrency/_import.dart';
+import 'package:cryptocurrency/import.dart';
 
 class AppProvider extends StatelessWidget {
   final Widget child;
