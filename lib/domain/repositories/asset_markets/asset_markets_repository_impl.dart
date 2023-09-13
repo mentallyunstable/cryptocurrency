@@ -1,7 +1,7 @@
 import 'package:cryptocurrency/import.dart';
 
-class ProdAssetMarketsRepository extends AssetMarketsRepository {
-  ProdAssetMarketsRepository(super.network);
+class AssetMarketsRepositoryImpl extends AssetMarketsRepository {
+  AssetMarketsRepositoryImpl(super.network);
 
   @override
   Future<Result> getAssetMarkets({required final String id}) async =>

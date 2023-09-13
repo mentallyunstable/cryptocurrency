@@ -10,13 +10,13 @@ class RepositoriesInjector extends Injector {
     ));
 
     container.registerLazySingleton<AssetsRepository>(
-      () => ProdAssetsRepository(network),
+      () => AssetsRepositoryImpl(network),
     );
     container.registerLazySingleton<ExchangesRepository>(
-      () => ProdExchangesRepository(network),
+      () => ExchangesRepositoryImpl(network),
     );
     container.registerLazySingleton<AssetMarketsRepository>(
-      () => ProdAssetMarketsRepository(network),
+      () => AssetMarketsRepositoryImpl(network),
     );
   }
 }
